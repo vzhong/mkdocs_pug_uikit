@@ -1,0 +1,26 @@
+!!! 5
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    if page.title
+      title=page.title
+    else
+      title=config.site_name
+
+    // UIKit
+    block stylesheets
+      link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.6/dist/css/uikit.min.css")
+    block scripts
+      script(src="https://cdn.jsdelivr.net/npm/uikit@3.7.6/dist/js/uikit.min.js")
+      script(src="https://cdn.jsdelivr.net/npm/uikit@3.7.6/dist/js/uikit-icons.min.js")
+  body
+    block nav
+      include theme/nav.pug
+      .uk-section-xsmall
+        .uk-container.uk-container-expand
+          block content
+            .body !{page.content}
+          block footer
+            .footer=config.copyright

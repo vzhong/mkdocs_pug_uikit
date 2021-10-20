@@ -1,0 +1,17 @@
+nav.uk-navbar-container(uk-navbar='')
+  .uk-navbar-left
+    ul.uk-navbar-nav
+      li.uk-active
+        a(href='/')=config.site_name
+      each page in nav
+        if page.children
+          li
+            a(href='#')=page.title
+            .uk-navbar-dropdown
+              ul.uk-nav.uk-navbar-dropdown-nav
+                for subpage in page.children
+                  li
+                    a(href='/'+subpage.url)=subpage.title
+        else
+          li
+            a(href='/'+page.url)=page.title

@@ -1,0 +1,18 @@
+site_name: MySite
+
+docs_dir: 'src/'
+site_dir: 'docs/'
+copyright: 'Copyright @2021 by Victor Zhong'
+
+nav:
+  - Home: 'index.md'
+  - Articles:
+    - 'Article A': 'a.md'
+    - 'Article B': 'b.md'
+
+theme:
+  name: null
+  custom_dir: 'theme/'
+
+plugins:
+  - mkdocs_pug
